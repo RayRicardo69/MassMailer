@@ -9,6 +9,27 @@ red='\e[1;31m'
 yellow='\e[1;33m' 
 BlueF='\e[1;34m'
 
+
+array[0]="Apple"
+array[1]="Apple ID"
+array[2]="iCloud"
+array[3]="Apple Security"
+array[4]="Service@AppleID"
+array[5]="Services@Apple"
+array[6]="apple@idapple.com"
+
+subject[0]="Limited access disable #"$(cat /dev/urandom | tr -dc 'a-z-0-9' | fold -w 10 | head -n 1)""
+subject[1]="Apple ID Login Activation #"$(cat /dev/urandom | tr -dc 'a-z-0-9' | fold -w 10 | head -n 1)""
+subject[2]="Notice : Security Alert From Your Apple ID #"$(cat /dev/urandom | tr -dc 'a-z-0-9' | fold -w 10 | head -n 1)""
+subject[3]="Reminder : Apple ID Token "$(cat /dev/urandom | tr -dc 'a-z-0-9' | fold -w 10 | head -n 1)""
+subject[4]="Apple ID Notification #"$(cat /dev/urandom | tr -dc 'a-z-0-9' | fold -w 10 | head -n 1)""
+subject[5]="Apple ID Security Notice #"$(cat /dev/urandom | tr -dc 'a-z-0-9' | fold -w 10 | head -n 1)""
+subject[6]="Apple ID Locked #"$(cat /dev/urandom | tr -dc 'a-z-0-9' | fold -w 10 | head -n 1)""
+subject[7]="Your Apple ID Has Be Disabled Notice #"$(cat /dev/urandom | tr -dc 'a-z-0-9' | fold -w 10 | head -n 1)""
+subject[8]="Apple ID Disable Temporary Account #"$(cat /dev/urandom | tr -dc 'a-z-0-9' | fold -w 10 | head -n 1)""
+
+
+
  
 numb=($(cat /dev/urandom | tr -dc 'a-z-0-9' | fold -w 7 | head -n 1))
 echo -e $cyan"======================================================"
@@ -25,16 +46,25 @@ echo -e $cyan"======================================================"
 echo -e $BlueF"                                         Ray Ricardo"
 echo -e $cyan"======================================================"
 
-letter="letter/aja.html" 
-name="Apple"
+
+letter="letter/new2.html" 
+
 
 
 echo -e $green'Start Send!!!!!' $white;
 myArray=($(cat mailinglist))
 total=${#myArray[*]}
 touch tempfile
+
 for (( i=0; i<=$(( $total -1 )); i++ ))
 do
+        #Name
+        size=${#array[@]}
+        index=$(($RANDOM % $size))
+        #Subject
+        sizee=${#subject[@]}
+        indeex=$(($RANDOM % $sizee))
+        sleep 3s
 	echo ${myArray[i]} > tempfile
 	EMAILTRUE=`grep '@' tempfile`
 	if [[ "$EMAILTRUE" > "" ]]; then
@@ -42,16 +72,17 @@ do
         SENDMAIL_BIN='sendmail'
         SENDER='etc/mailname'
         ADDRESS=$(cat /dev/urandom | tr -dc 'a-z-0-9' | fold -w 10 | head -n 1)"serv@"$(cat /dev/urandom | tr -dc 'a-z-0-9' | fold -w 30 | head -n 1)".msn.com"
-        #FROM_MAIL_DISLAY='PayPal
-        #REPLY="noreply@mail.webapps$numb.hostverIfiIed.$string1.hosted.live.mail.com"
-        SUBJECT="[ Sign-in Notification ] : Unauthorize Sign-in Check #"$(cat /dev/urandom | tr -dc 'a-z-0-9' | fold -w 10 | head -n 1)""
+
+        name=${array[$index]}
+
+        SUBJECT=${subject[$indeex]}
+
         MAIL_CMD=("$SENDMAIL_BIN" "${myArray[i]}")
-        (echo "From:"$name "<$ADDRESS>";echo "Subject:"$SUBJECT"";echo "To:"$EMAILTRUE"";echo -e "MIME-Version: 1.0\nContent-Transfer-Encoding: 8bit\nContent-Type: text/html \n" && cat $letter) | perl -MHTML::Entities -pe 'decode_entities($_);' | "${MAIL_CMD[@]}" 
-        sleep 3s
-        echo -e $red "FROM:"$name "<"$ADDRESS">" $lightgreen "SENT!" 
+        (echo "From:"$name "<$ADDRESS>";echo "Subject:"$SUBJECT"";echo "To:"$EMAILTRUE"";echo -e "MIME-Version: 1.0\nContent-Transfer-Encoding: 8bit\nContent-Type: text/html \n" && cat $letter) | "${MAIL_CMD[@]}" 
+        echo -e $red "FROM:"$name"<"$ADDRESS">" 
+        echo -e $yellow "SUBJECT:"$SUBJECT"" 
+        echo -e $lightgreen "SENT!" 
         echo -e $white
     fi
 done
 echo -n '';
-#| perl -MHTML::Entities -pe 'decode_entities($_);' << decode entities
-#|perl -MMIME::Base64 -ne 'printf "%s\n",decode_base64($_)' <<base64 dencode
