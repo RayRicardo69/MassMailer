@@ -6,7 +6,7 @@
 static FILE  *foo,*bar,*setting,*config;
 
 void SMTP(){
- foo = fopen("/etc/postfix/sasl/sasl_passwd","r");
+ foo = fopen("/etc/postfix/sasl_passwd","r");
  system("clear");
  printf("Start Postfix\n");
  system("systemctl start postfix");
@@ -15,11 +15,11 @@ void SMTP(){
  system("rm /etc/postfix/sasl_passwd");
  printf("Setup SMTP....\n");
  system("sleep 2s");
- system("cp smtp.txt /etc/postfix/sasl/");
- setting = fopen("/etc/postfix/sasl/smtp.txt","r");
- system("mv /etc/postfix/sasl/smtp.txt /etc/postfix/sasl_passwd");
- system("sudo chmod 400 /etc/postfix/sasl/sasl_passwd");
- system("sudo postmap /etc/postfix/sasl/sasl_passwd");
+ system("cp smtp.txt /etc/postfix/");
+ setting = fopen("/etc/postfix/smtp.txt","r");
+ system("mv /etc/postfix/smtp.txt /etc/postfix/sasl_passwd");
+ system("sudo chmod 400 /etc/postfix/sasl_passwd");
+ system("sudo postmap /etc/postfix/sasl_passwd");
 }
 
 void Config(){
