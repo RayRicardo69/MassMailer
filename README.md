@@ -2,10 +2,9 @@
 
 # Instalation
 
-# Debian
+Debian
 #sudo apt-get -y install postfix mailutils libsasl2-2 ca-certificates libsasl2-modules
-
-# CentOS
+CentOS
 #sudo yum -y install postfix mailutils libsasl2-2 ca-certificates libsasl2-modules
 
 # How To Use?
@@ -16,3 +15,7 @@ You need compile send.c for auto setup mailer before you sending email
 #gcc send.c -o send
 
 #./send
+
+Open New Terminal
+
+#tail -f /var/log/mail.log
