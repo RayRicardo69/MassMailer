@@ -46,7 +46,7 @@ echo -e $BlueF"                                         Ray Ricardo"
 echo -e $cyan"======================================================"
 
 
-letter="letter/new2.html" 
+letter="letter/letter.html" 
 echo -e $green'Start Send!!!!!' $white;
 myArray=($(cat mailinglist))
 total=${#myArray[*]}
