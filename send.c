@@ -12,15 +12,16 @@ void SMTP(){
  system("systemctl start postfix");
  //setting smtp
  setting = fopen("smtp.txt","r");
- system("rm /etc/postfix/sasl/sasl_passwd");
+ system("rm /etc/postfix/sasl_passwd");
  printf("Setup SMTP....\n");
  system("sleep 2s");
  system("cp smtp.txt /etc/postfix/sasl/");
  setting = fopen("/etc/postfix/sasl/smtp.txt","r");
- system("mv /etc/postfix/sasl/smtp.txt /etc/postfix/sasl/sasl_passwd");
+ system("mv /etc/postfix/sasl/smtp.txt /etc/postfix/sasl_passwd");
  system("sudo chmod 400 /etc/postfix/sasl/sasl_passwd");
  system("sudo postmap /etc/postfix/sasl/sasl_passwd");
 }
+
 void Config(){
     bar = fopen("/etc/postfix/main.cf","r");
     config = fopen("config.txt","r");
