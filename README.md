@@ -3,8 +3,11 @@
 # Instalation
 
 Debian
+
 #sudo apt-get -y install postfix mailutils libsasl2-2 ca-certificates libsasl2-modules
+
 CentOS
+
 #sudo yum -y install postfix mailutils libsasl2-2 ca-certificates libsasl2-modules
 
 # How To Use?
