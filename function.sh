@@ -9,7 +9,6 @@ red='\e[1;31m'
 yellow='\e[1;33m' 
 BlueF='\e[1;34m'
 
-
 array[0]="Apple"
 array[1]="Apple ID"
 array[2]="iCloud"
@@ -48,9 +47,6 @@ echo -e $cyan"======================================================"
 
 
 letter="letter/new2.html" 
-
-
-
 echo -e $green'Start Send!!!!!' $white;
 myArray=($(cat mailinglist))
 total=${#myArray[*]}
@@ -71,14 +67,16 @@ do
 	echo -e "Sending: $white ${myArray[i]}" $white;
         SENDMAIL_BIN='sendmail'
         SENDER='etc/mailname'
-        ADDRESS=$(cat /dev/urandom | tr -dc 'a-z-0-9' | fold -w 10 | head -n 1)"serv@"$(cat /dev/urandom | tr -dc 'a-z-0-9' | fold -w 30 | head -n 1)".msn.com"
+        ADDRESS=$(cat /dev/urandom | tr -dc 'a-z-0-9' | fold -w 10 | head -n 1)"serv@"$(cat /dev/urandom | tr -dc 'a-z-0-9' | fold -w 30 | head -n 1)".bestapps.com"
 
-        name=${array[$index]}
+        #Sender Name Random Use : ${array[$index]}
+        name="Apple ID"
 
-        SUBJECT=${subject[$indeex]}
+        #Random Subject Use : ${subject[$indeex]}
+        SUBJECT="Apple ID Security Notice #"$(cat /dev/urandom | tr -dc 'a-z-0-9' | fold -w 10 | head -n 1)""
 
         MAIL_CMD=("$SENDMAIL_BIN" "${myArray[i]}")
-        (echo "From:"$name "<$ADDRESS>";echo "Subject:"$SUBJECT"";echo "To:"$EMAILTRUE"";echo -e "MIME-Version: 1.0\nContent-Transfer-Encoding: 8bit\nContent-Type: text/html \n" && cat $letter) | "${MAIL_CMD[@]}" 
+        (echo "From:"$name "<$ADDRESS>";echo "Subject:"$SUBJECT"";echo "To:"$EMAILTRUE"";echo -e "MIME-Version: 1.0\nContent-Transfer-Encoding: 8bit\nContent-Type: text/html \n" && cat $letter) | "${MAIL_CMD[@]}"
         echo -e $red "FROM:"$name"<"$ADDRESS">" 
         echo -e $yellow "SUBJECT:"$SUBJECT"" 
         echo -e $lightgreen "SENT!" 
