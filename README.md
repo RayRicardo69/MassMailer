@@ -19,6 +19,9 @@ You need compile send.c for auto setup mailer before you sending email
 
 #./send
 
-Open New Terminal
+Great Thanks To 
 
-#tail -f /var/log/mail.log
+-Allah
+-Spammer ID
+-IndoXploit
+-PunkRockCitayemCrew
