@@ -36,6 +36,9 @@ rm /etc/postfix/addheader
 cp addheader.txt /etc/postfix/
 mv /etc/postfix/addheader.txt /etc/postfix/addheader
 
+#Open New Terminal To View Log
+gnome-terminal -e "tail -f /var/log/mail.log" 
+
 array[0]="Apple "
 array[1]="Apple ID"
 
