@@ -22,6 +22,9 @@ You need compile send.c for auto setup mailer before you sending email
 Great Thanks To 
 
 -Allah
+
 -Spammer ID
+
 -IndoXploit
+
 -PunkRockCitayemCrew
