@@ -1,4 +1,4 @@
-# BashMailer
+# MassMailer
 
 This Mailer Auto Setup Config For Postfix.You Can Setup Your Manual Config In config.txt.And Set SMTP in smtp.txt
 
