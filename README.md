@@ -14,9 +14,8 @@ CentOS
 
 #sudo yum -y install postfix mailutils libsasl2-2 ca-certificates libsasl2-modules
 
-#gcc send.c -o send
-
-#./send
+#chmod +x send.sh
+#./send.sh
 
 
 Youtube:
