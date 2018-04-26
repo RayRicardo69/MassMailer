@@ -133,12 +133,12 @@ do
            sed -Ei 's/##OS##/'${OS[indxB]}'/g' $letter
            sed -Ei 's/##BROWSER##/'${BROWSER[indxD]}'/g' $letter
 
-        ADDRESS="$(cat /dev/urandom | tr -dc 'a-z-0-9' | fold -w 20 | head -n 1)""hilih@appleid.apple.com"
+        ADDRESS="$(cat /dev/urandom | tr -dc 'a-z-0-9' | fold -w 20 | head -n 1)""hilih@domain.com"
 
          
         #Send Using Random Name : ${array[$index]}
         #Send Using Single Name : "Apple"
-        name="Apple"
+        name="TEST"
 
         #Send Using Random Subject
         #Example SUBJECT=${subject[$indeex]}
