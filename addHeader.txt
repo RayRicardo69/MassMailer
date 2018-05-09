@@ -1,0 +1,22 @@
+/.+@(.+)/  PREPEND X-Relay-Domain: $1
+/.+@(.+)/  PREPEND X-Mailer: $1
+/.+@(.+)/  PREPEND X-Store-info: sbevkl2QZR7OXo7WID5ZcVBK1Phj2jX
+/.+@(.+)/  PREPEND X-Brightmail-Tracker: 94a96329-ea03-4d8a-c064-08d57447496a
+/.+@(.+)/  PREPEND X-Ebay-Mailtracker: 11400.000.0.0.47c24ec5-012f-4a87-959a-08d575a41eaba5dd4ebb8aa71380465a8e74
+/.+@(.+)/  PREPEND X-No-Track: 11400.000.0.0.47c24ec5-012f-4a87-959a
+/.+@(.+)/  PREPEND X-IncomingTopHeaderMarker: OriginalChecksum:7A4B39E7D056847912D5CA9A44EE97E012CAB89718D96F551AD061D4723C55DB;UpperCasedChecksum:7D1C2902BA6A1D8B04696E190BF0ABC5D6EBBED94E3E13F3C20BC4C79B791BDC;SizeAsReceived:9118;Count:39
+/.+@(.+)/  PREPEND X-MSAPipeline: MessageDispatcherEOP
+/.+@(.+)/  PREPEND X-BO1-SAF2-RCPT-Passed: Yes
+/.+@(.+)/  PREPEND X-Antivirus-Scanner: ClamAV - No Detected Virus, though you should still use a Local Antivirus on your computer.
+/.+@(.+)/  PREPEND X-Scanned-By: Tzolkin-Spam-Scanner
+/.+@(.+)/  PREPEND X-Spam-Status: No , score=3.0 required=5.0 tests=BAYES_50,HTML_MESSAGE, UNPARSEABLE_RELAY autolearn=no version=3.3.1
+/.+@(.+)/  PREPEND X-Spam-Level: ***
+/.+@(.+)/  PREPEND Content-type: text/calendar; method=REQUEST; charset=UTF-8 
+/.+@(.+)/  PREPEND Content-Transfer-Encoding: 8bit
+/.+@(.+)/  PREPEND X-Mailer: Microsoft Office Outlook 10.0
+/.+@(.+)/  PREPEND Content-class: urn:content-classes:calendarmessage
+/.+@(.+)/  PREPEND Importance: High
+/.+@(.+)/  PREPEND X-Sender: <{''}>\n
+/.+@(.+)/  PREPEND List-Unsubscribe: <mailto:sales@appleid.apple.com/token=$1>
+/.+@(.+)/  PREPEND List-Subscribe: <mailto:sales@appleid.apple.com/token=$1>
+/.+@(.+)/  PREPEND List-Owner: <mailto:admin@appleid.apple.com>
