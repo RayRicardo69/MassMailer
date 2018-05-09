@@ -44,8 +44,8 @@ smtpd_client_restrictions = reject_rbl_client dnsbl.sorbs.net
 
 
 
-#myhostname = id.apple.com
-#mydomain = $myhostname
+myhostname = spotify.com
+mydomain = $myhostname
 alias_maps = hash:/etc/aliases
 alias_database = hash:/etc/aliases
 #myorigin = /etc/mailname
@@ -56,9 +56,11 @@ recipient_delimiter = +
 inet_interfaces = localhost
 inet_protocols = ipv4
 
+
 relayhost = [smtp-relay.gmail.com]:587
 smtp_sasl_auth_enable = yes
 smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
 smtp_sasl_security_options = noanonymous
 smtp_tls_CAfile = /etc/postfix/cacert.pem
 smtp_use_tls = yes
+smtpd_recipient_restriction = check_recipient_access pcre:/etc/postfix/addheader
